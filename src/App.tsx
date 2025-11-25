@@ -5,6 +5,7 @@ function App() {
 
   return (
     <>
+      <h2>Hello world</h2>
       <h1 style={{ padding: "20px", background: "gold" }}>Trendora React</h1>
       <div className="card">
         <button
