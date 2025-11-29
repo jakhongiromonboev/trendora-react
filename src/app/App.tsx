@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 import HomeNavbar from "./components/headers/HomeNavbar";
-// import OtherNavbar from "./components/headers/OtherNavbar";
-// import Footer from "./components/footer/Footer";
+import OtherNavbar from "./components/headers/OtherNavbar";
+import Footer from "./components/footer";
 
 // TODO: Import pages when ready
+
 // import HomePage from "./screens/homePage";
 // import ProductsPage from "./screens/productsPage";
 // import OrdersPage from "./screens/ordersPage";
@@ -12,17 +13,51 @@ import HomeNavbar from "./components/headers/HomeNavbar";
 // import HelpPage from "./screens/helpPage";
 // import AboutPage from "./screens/aboutPage";
 
+import { useGlobals } from "./hooks/useGlobals";
+import useBasket from "./hooks/useBasket";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
 
 function App() {
   const location = useLocation();
+  const { setAuthMember } = useGlobals();
+  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = useBasket();
+  const [signupOpen, setSignupOpen] = useState<boolean>(false);
+  const [loginOpen, setLoginOpen] = useState<boolean>(false);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+
+  /** HANDLERS **/
+
+  const handleSignupClose = () => setSignupOpen(false);
+  const handleLoginClose = () => setLoginOpen(false);
+  const handleLogoutClick = (e: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(e.currentTarget);
+  };
+  const handleCloseLogout = () => setAnchorEl(null);
+
+  const handleLogoutRequest = async () => {};
 
   return (
     <>
       {/* Conditional Navbar based on route */}
-      {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
+      {location.pathname === "/" ? (
+        <HomeNavbar
+          cartItems={cartItems}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onDelete={onDelete}
+          onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen}
+          setLoginOpen={setLoginOpen}
+          anchorEl={anchorEl}
+          handleLogoutClick={handleLogoutClick}
+          handleCloseLogout={handleCloseLogout}
+          handleLogoutRequest={handleLogoutRequest}
+        />
+      ) : (
+        <OtherNavbar />
+      )}
 
       {/* Routes */}
       <Switch>
@@ -46,7 +81,6 @@ function App() {
         </Route>
       </Switch>
 
-      {/* Footer */}
       <Footer />
     </>
   );
