@@ -6,9 +6,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter as Router } from "react-router-dom";
 import theme from "./app/MaterialTheme";
-import "./css/index.css";
 import ContextProvider from "./app/context/ContextProvider";
 import App from "./app/App";
+
+import "./css/main.css";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
