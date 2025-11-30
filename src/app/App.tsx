@@ -15,9 +15,9 @@ import Footer from "./components/footer";
 
 import { useGlobals } from "./hooks/useGlobals";
 import useBasket from "./hooks/useBasket";
-import "../css/app.css";
-import "../css/navbar.css";
-import "../css/footer.css";
+// import "../css/app.css";
+// import "../css/navbar.css";
+// import "../css/footer.css";
 
 function App() {
   const location = useLocation();
@@ -56,7 +56,19 @@ function App() {
           handleLogoutRequest={handleLogoutRequest}
         />
       ) : (
-        <OtherNavbar />
+        <OtherNavbar
+          cartItems={cartItems}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onDelete={onDelete}
+          onDeleteAll={onDeleteAll}
+          setSignupOpen={setSignupOpen}
+          setLoginOpen={setLoginOpen}
+          anchorEl={anchorEl}
+          handleLogoutClick={handleLogoutClick}
+          handleCloseLogout={handleCloseLogout}
+          handleLogoutRequest={handleLogoutRequest}
+        />
       )}
 
       {/* Routes */}

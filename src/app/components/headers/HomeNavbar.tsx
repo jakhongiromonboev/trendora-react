@@ -50,12 +50,8 @@ export default function HomeNavbar(props: HomeNavbarProps) {
       <Container className="navbar-container">
         <Stack className="menu">
           <Box>
-            <NavLink to="/">
-              <img
-                className="brand-logo"
-                src="/icons/trendora-logo.svg"
-                alt="TRENDORA"
-              />
+            <NavLink to="/" className="brand-text">
+              TRENDORA
             </NavLink>
           </Box>
           <Stack className="links">
@@ -173,7 +169,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
 
         {/* Hero Section with Video Background */}
         <Stack className={"header-frame"}>
-          {/* Video placeholder - will be replaced with actual video */}
+          {/* Video Background */}
           <video
             className="hero-video"
             autoPlay
@@ -182,7 +178,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
             playsInline
             poster="/img/video-poster.jpg"
           >
-            <source src="/videos/hero-video.mp4" type="video/mp4" />
+            <source src="/video/hero-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
