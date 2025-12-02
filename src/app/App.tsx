@@ -3,6 +3,8 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import HomeNavbar from "./components/headers/HomeNavbar";
 import OtherNavbar from "./components/headers/OtherNavbar";
 import Footer from "./components/footer";
+import { useGlobals } from "./hooks/useGlobals";
+import useBasket from "./hooks/useBasket";
 
 // TODO: Import pages when ready
 
@@ -13,11 +15,9 @@ import Footer from "./components/footer";
 // import HelpPage from "./screens/helpPage";
 // import AboutPage from "./screens/aboutPage";
 
-import { useGlobals } from "./hooks/useGlobals";
-import useBasket from "./hooks/useBasket";
-// import "../css/app.css";
-// import "../css/navbar.css";
-// import "../css/footer.css";
+import "../css/app.css";
+import "../css/navbar.css";
+import "../css/footer.css";
 
 function App() {
   const location = useLocation();
@@ -87,6 +87,9 @@ function App() {
         </Route>
         <Route path="/about">
           <div>About Us Page - TODO</div>
+        </Route>
+        <Route path="/contact">
+          <div>Contact Page - TODO</div>
         </Route>
         <Route path="/">
           <div>Home Page - TODO</div>

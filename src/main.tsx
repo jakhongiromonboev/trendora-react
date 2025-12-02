@@ -9,7 +9,7 @@ import theme from "./app/MaterialTheme";
 import ContextProvider from "./app/context/ContextProvider";
 import App from "./app/App";
 
-// import "./css/main.css";
+import "./css/index.css";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);

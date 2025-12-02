@@ -56,7 +56,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
           </Box>
           <Stack className="links">
             <Box className={"hover-line"}>
-              <NavLink to="/" activeClassName={"underline"}>
+              <NavLink to="/" activeClassName={"underline"} exact>
                 Home
               </NavLink>
             </Box>
@@ -159,7 +159,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
             >
               <MenuItem onClick={handleLogoutRequest}>
                 <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "#d4a574" }} />
+                  <Logout fontSize="small" style={{ color: "#000000" }} />
                 </ListItemIcon>
                 Logout
               </MenuItem>
