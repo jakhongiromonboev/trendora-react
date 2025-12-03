@@ -8,7 +8,7 @@ import useBasket from "./hooks/useBasket";
 
 // TODO: Import pages when ready
 
-// import HomePage from "./screens/homePage";
+import HomePage from "./screens/homePage";
 // import ProductsPage from "./screens/productsPage";
 // import OrdersPage from "./screens/ordersPage";
 // import UserPage from "./screens/userPage";
@@ -74,7 +74,7 @@ function App() {
       {/* Routes */}
       <Switch>
         <Route path="/products">
-          <div>Products Page - TODO</div>
+          <div>Shop Page - TODO</div>
         </Route>
         <Route path="/orders">
           <div>Orders Page - TODO</div>
@@ -89,10 +89,10 @@ function App() {
           <div>About Us Page - TODO</div>
         </Route>
         <Route path="/contact">
-          <div>Contact Page - TODO</div>
+          <div>Contact Us Page - TODO</div>
         </Route>
         <Route path="/">
-          <div>Home Page - TODO</div>
+          <HomePage />
         </Route>
       </Switch>
 
