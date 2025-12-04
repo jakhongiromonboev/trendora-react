@@ -108,7 +108,7 @@ export default function ShopByCategory() {
             </Box>
           </Box>
 
-          {/* SHOES - with diagonal clip */}
+          {/* SHOES */}
           <Box
             className={"category-card category-shoes"}
             onClick={() => handleCategoryClick(categories[3].collection)}
@@ -126,7 +126,7 @@ export default function ShopByCategory() {
             </Box>
           </Box>
 
-          {/* ACCESSORIES - with diagonal clip */}
+          {/* ACCESSORIES */}
           <Box
             className={"category-card category-accessories"}
             onClick={() => handleCategoryClick(categories[4].collection)}

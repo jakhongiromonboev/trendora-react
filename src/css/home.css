@@ -4,7 +4,7 @@
 }
 
 /* ============================================
-   SHOP BY CATEGORY - CLEAN ASYMMETRIC (FINAL)
+   SHOP BY CATEGORY 
    ============================================ */
 .homepage .shop-by-category-frame {
   width: 100%;
@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 1400px; /* CONTAINER WIDTH */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -30,6 +30,7 @@
   color: #000000;
   letter-spacing: -0.5px;
   text-align: center;
+  font-family: "Playfair Display", serif;
 }
 
 .homepage .shop-by-category-frame .category-subtitle {
@@ -40,7 +41,6 @@
   margin-top: -5px;
 }
 
-/* Clean Asymmetric Grid */
 .homepage .shop-by-category-frame .category-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -49,7 +49,7 @@
   width: 100%;
 }
 
-/* TOPS - Large Left (Spans 2 rows) */
+/* TOPS - Large Left */
 .homepage .shop-by-category-frame .category-tops {
   grid-column: 1;
   grid-row: 1 / 3;
@@ -79,7 +79,6 @@
   grid-row: 2;
 }
 
-/* Category Card Styles */
 .homepage .shop-by-category-frame .category-card {
   position: relative;
   overflow: hidden;
@@ -93,7 +92,6 @@
   z-index: 10;
 }
 
-/* Image */
 .homepage .shop-by-category-frame .category-image {
   width: 100%;
   height: 100%;
@@ -105,7 +103,6 @@
   transform: scale(1.15);
 }
 
-/* Overlay */
 .homepage .shop-by-category-frame .category-overlay {
   position: absolute;
   top: 0;
@@ -136,7 +133,6 @@
   );
 }
 
-/* Text */
 .homepage .shop-by-category-frame .category-name {
   font-size: 28px;
   font-weight: 700;
@@ -254,5 +250,636 @@
 
   .homepage .shop-by-category-frame .category-overlay {
     padding: 22px;
+  }
+}
+
+/* ============================================
+   TRENDING NOW
+   ============================================ */
+
+.homepage .trending-now-frame {
+  width: 100%;
+  padding: 80px 0;
+  background: #ffffff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.homepage .trending-now-frame .main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.homepage .trending-now-frame .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.5px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+.homepage .trending-now-frame .section-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: #555555;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.homepage .trending-now-frame .products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.homepage .trending-now-frame .product-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.homepage .trending-now-frame .product-card:hover {
+  transform: translateY(-8px);
+}
+
+.homepage .trending-now-frame .product-image-wrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.homepage .trending-now-frame .product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.homepage .trending-now-frame .product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+.homepage .trending-now-frame .product-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.homepage
+  .trending-now-frame
+  .product-card:hover
+  .product-image-wrapper::after {
+  opacity: 1;
+}
+
+.homepage .trending-now-frame .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.homepage .trending-now-frame .product-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: 0.2px;
+}
+
+.homepage .trending-now-frame .product-category {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.homepage .trending-now-frame .product-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* No Data */
+.homepage .trending-now-frame .no-data {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 16px;
+  color: #999999;
+  padding: 60px 20px;
+}
+
+/* View All Button */
+.homepage .trending-now-frame .view-all-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.homepage .trending-now-frame .view-all-btn {
+  padding: 14px 40px;
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.homepage .trending-now-frame .view-all-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 1440px) {
+  .homepage .trending-now-frame .main {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .homepage .trending-now-frame .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .homepage .trending-now-frame .product-image-wrapper {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage .trending-now-frame {
+    padding: 60px 0;
+  }
+
+  .homepage .trending-now-frame .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .homepage .trending-now-frame .product-image-wrapper {
+    height: 300px;
+  }
+
+  .homepage .trending-now-frame .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage .trending-now-frame {
+    padding: 50px 0;
+  }
+
+  .homepage .trending-now-frame .main {
+    gap: 30px;
+  }
+
+  .homepage .trending-now-frame .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .homepage .trending-now-frame .product-image-wrapper {
+    height: 240px;
+  }
+
+  .homepage .trending-now-frame .section-title {
+    font-size: 26px;
+  }
+
+  .homepage .trending-now-frame .product-name {
+    font-size: 14px;
+  }
+
+  .homepage .trending-now-frame .product-price {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   NEW ARRIVALS 
+   ============================================ */
+.homepage .new-arrivals-frame {
+  width: 100%;
+  padding: 80px 0;
+  background: #ffffff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.homepage .new-arrivals-frame .main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.homepage .new-arrivals-frame .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.5px;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+.homepage .new-arrivals-frame .section-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: #555555;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.homepage .new-arrivals-frame .products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.homepage .new-arrivals-frame .product-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.homepage .new-arrivals-frame .product-card:hover {
+  transform: translateY(-8px);
+}
+
+.homepage .new-arrivals-frame .product-image-wrapper {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #f5f5f5;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.homepage .new-arrivals-frame .product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.homepage .new-arrivals-frame .product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+.homepage .new-arrivals-frame .product-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.homepage
+  .new-arrivals-frame
+  .product-card:hover
+  .product-image-wrapper::after {
+  opacity: 1;
+}
+s .homepage .new-arrivals-frame .product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.homepage .new-arrivals-frame .product-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  letter-spacing: 0.2px;
+}
+
+.homepage .new-arrivals-frame .product-category {
+  font-size: 12px;
+  font-weight: 500;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.homepage .new-arrivals-frame .product-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+}
+
+/* No Data */
+.homepage .new-arrivals-frame .no-data {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 16px;
+  color: #999999;
+  padding: 60px 20px;
+}
+
+/* View All Button */
+.homepage .new-arrivals-frame .view-all-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.homepage .new-arrivals-frame .view-all-btn {
+  padding: 14px 40px;
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.homepage .new-arrivals-frame .view-all-btn:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 1440px) {
+  .homepage .new-arrivals-frame .main {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .homepage .new-arrivals-frame .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .homepage .new-arrivals-frame .product-image-wrapper {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage .new-arrivals-frame {
+    padding: 60px 0;
+  }
+
+  .homepage .new-arrivals-frame .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .homepage .new-arrivals-frame .product-image-wrapper {
+    height: 300px;
+  }
+
+  .homepage .new-arrivals-frame .section-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage .new-arrivals-frame {
+    padding: 50px 0;
+  }
+
+  .homepage .new-arrivals-frame .main {
+    gap: 30px;
+  }
+
+  .homepage .new-arrivals-frame .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .homepage .new-arrivals-frame .product-image-wrapper {
+    height: 240px;
+  }
+
+  .homepage .new-arrivals-frame .section-title {
+    font-size: 26px;
+  }
+
+  .homepage .new-arrivals-frame .product-name {
+    font-size: 14px;
+  }
+
+  .homepage .new-arrivals-frame .product-price {
+    font-size: 16px;
+  }
+}
+
+/* ============================================
+   PROMOTIONAL BANNER 
+   ============================================ */
+.homepage .promotional-banner-frame {
+  width: 100%;
+  padding: 40px 0;
+  background: #ffffff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.homepage .promotional-banner-frame .banner-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  width: 100%;
+  height: 850px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.homepage .promotional-banner-frame .banner-section {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.homepage .promotional-banner-frame .banner-section:hover {
+  transform: scale(1.01);
+  z-index: 10;
+}
+
+.homepage .promotional-banner-frame .banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.homepage .promotional-banner-frame .banner-section:hover .banner-image {
+  transform: scale(1.08);
+}
+
+.homepage .promotional-banner-frame .banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.15) 35%,
+    rgba(0, 0, 0, 0) 65%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 100px;
+  transition: background 0.3s ease;
+}
+
+.homepage .promotional-banner-frame .banner-section:hover .banner-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.25) 35%,
+    rgba(0, 0, 0, 0) 65%
+  );
+}
+
+.homepage .promotional-banner-frame .banner-content {
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.homepage .promotional-banner-frame .banner-title {
+  font-size: 46px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.homepage .promotional-banner-frame .banner-subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  opacity: 0.95;
+  letter-spacing: 0.8px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.homepage .promotional-banner-frame .banner-btn {
+  padding: 13px 42px;
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.homepage .promotional-banner-frame .banner-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .homepage .promotional-banner-frame {
+    padding: 80px 0;
+  }
+
+  .homepage .promotional-banner-frame .banner-container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .homepage .promotional-banner-frame .banner-section {
+    height: 550px;
+  }
+
+  .homepage .promotional-banner-frame .banner-title {
+    font-size: 40px;
+  }
+
+  .homepage .promotional-banner-frame .banner-subtitle {
+    font-size: 14px;
+  }
+
+  .homepage .promotional-banner-frame .banner-overlay {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .homepage .promotional-banner-frame {
+    padding: 60px 0;
+  }
+
+  .homepage .promotional-banner-frame .banner-section {
+    height: 480px;
+  }
+
+  .homepage .promotional-banner-frame .banner-title {
+    font-size: 34px;
+  }
+
+  .homepage .promotional-banner-frame .banner-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .homepage .promotional-banner-frame .banner-btn {
+    padding: 12px 35px;
+    font-size: 11px;
+  }
+
+  .homepage .promotional-banner-frame .banner-overlay {
+    padding-bottom: 60px;
   }
 }
