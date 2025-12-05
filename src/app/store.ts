@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import type { ThunkAction, Action } from "@reduxjs/toolkit";
 import reduxLogger from "redux-logger";
+import HomePageReducer from "./screens/homePage/slice";
 
 export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     // @ts-ignore
     getDefaultMiddleware().concat(reduxLogger),
   reducer: {
-    // Reducers will be added here
+    homePage: HomePageReducer,
   },
 });
 
