@@ -12,5 +12,5 @@ export const retrieveTrendingNow = createSelector(
 
 export const retrieveNewArrivals = createSelector(
   (state: AppRootState) => state.homePage,
-  (HomePage: HomePageState) => HomePage.trendingNow
+  (HomePage: HomePageState) => HomePage.newArrivals
 );
