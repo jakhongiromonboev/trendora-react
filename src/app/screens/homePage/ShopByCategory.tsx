@@ -11,40 +11,40 @@ export default function ShopByCategory() {
       name: "TOPS",
       description: "T-shirts, Hoodies & Jackets",
       image: "/img/tops(main).jpg",
-      collection: "TOPS",
+      productCollection: "TOPS",
     },
     {
       id: 2,
       name: "BOTTOMS",
       description: "Jeans, Trousers & Shorts",
       image: "/img/bottoms2.jpg",
-      collection: "BOTTOMS",
+      productCollection: "BOTTOMS",
     },
     {
       id: 3,
       name: "DRESSES",
       description: "Elegant & Casual",
       image: "/img/dresses.jpg",
-      collection: "DRESSES",
+      productCollection: "DRESSES",
     },
     {
       id: 4,
       name: "SHOES",
       description: "Sneakers, Boots & Heels",
       image: "/img/shoes1.jpg",
-      collection: "SHOES",
+      productCollection: "SHOES",
     },
     {
       id: 5,
       name: "ACCESSORIES",
       description: "Bags, Caps & Jewelry",
       image: "/img/accessories.jpg",
-      collection: "ACCESSORIES",
+      productCollection: "ACCESSORIES",
     },
   ];
 
-  const handleCategoryClick = (collection: string) => {
-    history.push(`/products?collection=${collection}`);
+  const handleCategoryClick = (productCollection: string) => {
+    history.push(`/products?productCollection=${productCollection}`);
   };
 
   return (
@@ -57,7 +57,7 @@ export default function ShopByCategory() {
           {/* TOPS */}
           <Box
             className={"category-card category-tops"}
-            onClick={() => handleCategoryClick(categories[0].collection)}
+            onClick={() => handleCategoryClick(categories[0].productCollection)}
           >
             <img
               src={categories[0].image}
@@ -75,7 +75,7 @@ export default function ShopByCategory() {
           {/* BOTTOMS */}
           <Box
             className={"category-card category-bottoms"}
-            onClick={() => handleCategoryClick(categories[1].collection)}
+            onClick={() => handleCategoryClick(categories[1].productCollection)}
           >
             <img
               src={categories[1].image}
@@ -93,7 +93,7 @@ export default function ShopByCategory() {
           {/* DRESSES */}
           <Box
             className={"category-card category-dresses"}
-            onClick={() => handleCategoryClick(categories[2].collection)}
+            onClick={() => handleCategoryClick(categories[2].productCollection)}
           >
             <img
               src={categories[2].image}
@@ -111,7 +111,7 @@ export default function ShopByCategory() {
           {/* SHOES */}
           <Box
             className={"category-card category-shoes"}
-            onClick={() => handleCategoryClick(categories[3].collection)}
+            onClick={() => handleCategoryClick(categories[3].productCollection)}
           >
             <img
               src={categories[3].image}
@@ -129,7 +129,7 @@ export default function ShopByCategory() {
           {/* ACCESSORIES */}
           <Box
             className={"category-card category-accessories"}
-            onClick={() => handleCategoryClick(categories[4].collection)}
+            onClick={() => handleCategoryClick(categories[4].productCollection)}
           >
             <img
               src={categories[4].image}
