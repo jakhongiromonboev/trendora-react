@@ -21,7 +21,7 @@ export default function NewArrivals() {
   console.log("newArrivals:", newArrivals);
 
   const handleProductClick = (productId: string) => {
-    history.push(`/product/${productId}`);
+    history.push(`/products/${productId}`);
   };
 
   const handleViewAll = () => {

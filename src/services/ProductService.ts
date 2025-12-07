@@ -15,6 +15,10 @@ class ProductService {
       if (input.productCollection) {
         url += `&productCollection=${input.productCollection}`;
       }
+
+      if (input.gender) {
+        url += `&gender=${input.gender}`;
+      }
       if (input.search) url += `&search=${input.search}`;
 
       const result = await axios.get(url);
@@ -31,6 +35,7 @@ class ProductService {
   public async getProduct(productId: string): Promise<Product> {
     try {
       const url = `${this.path}/product/${productId}`;
+      console.log("url", url);
       const result = await axios.get(url, { withCredentials: true });
       console.log("getProduct:", result);
 

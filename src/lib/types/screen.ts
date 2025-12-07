@@ -3,7 +3,7 @@ import type { Product } from "./product";
 /** REACT APP STATE **/
 export interface AppRootState {
   homePage: HomePageState;
-  //   productsPage: ProductsPageState;
+  productsPage: ProductsPageState;
   //   ordersPage: OrdersPageState;
 }
 
@@ -14,5 +14,9 @@ export interface HomePageState {
 }
 
 /** PRODUCTS PAGE **/
+export interface ProductsPageState {
+  products: Product[];
+  chosenProduct: Product | null /** Chosen product is being stored in STATE (NOT in REDUX!) **/;
+}
 
 /** ORDERS PAGE **/

@@ -18,6 +18,7 @@ import HomePage from "./screens/homePage";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+import ProductsPage from "./screens/productsPage";
 
 function App() {
   const location = useLocation();
@@ -74,7 +75,7 @@ function App() {
       {/* Routes */}
       <Switch>
         <Route path="/products">
-          <div>Shop Page - TODO</div>
+          <ProductsPage onAdd={onAdd} />
         </Route>
         <Route path="/orders">
           <div>Orders Page - TODO</div>

@@ -20,7 +20,7 @@ export default function TrendingNow() {
   const { trendingProducts } = useSelector(trendingNowRetriever);
 
   const handleProductClick = (productId: string) => {
-    history.push(`/product/${productId}`);
+    history.push(`/products/${productId}`);
   };
 
   const handleViewAll = () => {
