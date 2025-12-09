@@ -28,6 +28,8 @@ export interface ProductInquiry {
   page: number;
   limit: number;
   productCollection?: ProductCollection;
+  productSize?: ProductSize;
+  productShoeSize?: ProductShoeSize;
   gender?: ProductGender;
   search?: string;
 }

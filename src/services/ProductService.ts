@@ -19,6 +19,12 @@ class ProductService {
       if (input.gender) {
         url += `&gender=${input.gender}`;
       }
+      if (input.productSize) {
+        url += `&productSize=${input.productSize}`;
+      }
+      if (input.productShoeSize) {
+        url += `&productShoeSize=${input.productShoeSize}`;
+      }
       if (input.search) url += `&search=${input.search}`;
 
       const result = await axios.get(url);
