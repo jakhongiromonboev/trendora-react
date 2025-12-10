@@ -57,3 +57,22 @@ export const sweetFailureProvider = (
     }
   });
 };
+
+export const sweetBagAlert = async (productName: string) => {
+  const result = await Swal.fire({
+    toast: true,
+    position: "bottom-end",
+    icon: "success",
+    title: "Added to your bag",
+    text: productName,
+    confirmButtonColor: "#000000",
+    showCancelButton: false,
+    timer: 1000,
+    timerProgressBar: true,
+    customClass: {
+      popup: "bag-toast-popup",
+      title: "bag-toast-title",
+      confirmButton: "bag-toast-btn",
+    },
+  });
+};

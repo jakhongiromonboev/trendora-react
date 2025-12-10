@@ -244,6 +244,19 @@
   font-weight: 500;
 }
 
+.chosen-product .product-views {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: #888888;
+}
+
+.chosen-product .product-views svg {
+  font-size: 16px;
+  color: #888888;
+}
+
 /* Add to Bag */
 .chosen-product .add-to-bag {
   width: 100%;

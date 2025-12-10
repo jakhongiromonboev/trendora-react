@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Stack } from "@mui/material";
 import { useHistory } from "react-router-dom";
+import { ProductCollection } from "../../../lib/enums/product.enum";
 
 export default function ShopByCategory() {
   const history = useHistory();
@@ -11,39 +12,39 @@ export default function ShopByCategory() {
       name: "TOPS",
       description: "T-shirts, Hoodies & Jackets",
       image: "/img/tops(main).jpg",
-      productCollection: "TOPS",
+      productCollection: ProductCollection.TOPS,
     },
     {
       id: 2,
       name: "BOTTOMS",
       description: "Jeans, Trousers & Shorts",
       image: "/img/bottoms2.jpg",
-      productCollection: "BOTTOMS",
+      productCollection: ProductCollection.BOTTOMS,
     },
     {
       id: 3,
       name: "DRESSES",
       description: "Elegant & Casual",
       image: "/img/dresses.jpg",
-      productCollection: "DRESSES",
+      productCollection: ProductCollection.DRESSES,
     },
     {
       id: 4,
       name: "SHOES",
       description: "Sneakers, Boots & Heels",
       image: "/img/shoes1.jpg",
-      productCollection: "SHOES",
+      productCollection: ProductCollection.SHOES,
     },
     {
       id: 5,
       name: "ACCESSORIES",
       description: "Bags, Caps & Jewelry",
       image: "/img/accessories.jpg",
-      productCollection: "ACCESSORIES",
+      productCollection: ProductCollection.ACCESSORIES,
     },
   ];
 
-  const handleCategoryClick = (productCollection: string) => {
+  const handleCategoryClick = (productCollection: ProductCollection) => {
     history.push(`/products?productCollection=${productCollection}`);
   };
 

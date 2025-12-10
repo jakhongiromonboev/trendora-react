@@ -6,6 +6,7 @@ import AssignmentReturnOutlinedIcon from "@mui/icons-material/AssignmentReturnOu
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import type { CartItem } from "../../../lib/types/search";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
@@ -121,7 +122,6 @@ export default function ChosenProduct(props: ChosenProductProps) {
     return collection.charAt(0) + collection.slice(1).toLowerCase();
   };
 
-  /** EARLY RETURN (JUST IN CASE)**/
   if (!chosenProduct) {
     return (
       <div className="chosen-product">
@@ -132,13 +132,12 @@ export default function ChosenProduct(props: ChosenProductProps) {
     );
   }
 
-  /** SIZE DISPLAY **/
   const displaySize =
-    chosenProduct?.productCollection === ProductCollection.SHOES
-      ? chosenProduct?.productShoeSize
-      : chosenProduct?.productSize;
+    chosenProduct.productCollection === ProductCollection.SHOES
+      ? chosenProduct.productShoeSize
+      : chosenProduct.productSize;
 
-  const isInStock = (chosenProduct?.productLeftCount ?? 0) > 0;
+  const isInStock = (chosenProduct.productLeftCount ?? 0) > 0;
 
   return (
     <div className="chosen-product">
@@ -235,7 +234,6 @@ export default function ChosenProduct(props: ChosenProductProps) {
             <p className="model-info">Model is 175cm / 5'9" and wears size S</p>
           </Box>
 
-          {/* STOCK STATUS */}
           <Box className="stock-status">
             {isInStock ? (
               <span className="in-stock">
@@ -244,6 +242,10 @@ export default function ChosenProduct(props: ChosenProductProps) {
             ) : (
               <span className="out-of-stock">Out of Stock</span>
             )}
+            <span className="product-views">
+              <VisibilityOutlinedIcon />
+              {chosenProduct?.productViews}
+            </span>
           </Box>
 
           {/* ADD TO BAG BUTTON */}
@@ -255,7 +257,7 @@ export default function ChosenProduct(props: ChosenProductProps) {
             {isInStock ? "Add to Bag" : "Out of Stock"}
           </button>
 
-          {/* ACCORDIONS */}
+          {/* ACCORDION */}
           <Box className="accordion">
             {/* THE DETAILS */}
             <Box
@@ -369,33 +371,33 @@ export default function ChosenProduct(props: ChosenProductProps) {
         <Box className="related-products">
           <Container>
             <h2 className="related-title">You May Also Like</h2>
-            <Stack className="related-grid">
+            <Box className="related-grid">
               {relatedProducts?.map((product) => {
-                const imagePath = `${serverApi}/${product.productImages[0]}`;
+                const imagePath = `${serverApi}/${product?.productImages?.[0]}`;
                 return (
                   <Box
-                    key={product._id}
+                    key={product?._id}
                     className="related-card"
-                    onClick={() => handleRelatedProductClick(product._id)}
+                    onClick={() => handleRelatedProductClick(product?._id)}
                   >
                     <Box className="related-image">
-                      <img src={imagePath} alt={product.productName} />
+                      <img src={imagePath} alt={product?.productName} />
                     </Box>
                     <Box className="related-info">
                       <span className="related-name">
-                        {product.productName}
+                        {product?.productName}
                       </span>
                       <span className="related-category">
-                        {product.productCollection}
+                        {product?.productCollection}
                       </span>
                       <span className="related-price">
-                        ${product.productPrice.toFixed(2)}
+                        ${product?.productPrice?.toFixed(2)}
                       </span>
                     </Box>
                   </Box>
                 );
               })}
-            </Stack>
+            </Box>
           </Container>
         </Box>
       )}
