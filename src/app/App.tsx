@@ -18,6 +18,7 @@ import ProductsPage from "./screens/productsPage";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+import Contact from "./screens/contactUsPage";
 
 function App() {
   const location = useLocation();
@@ -89,7 +90,7 @@ function App() {
           <div>About Us Page - TODO</div>
         </Route>
         <Route path="/contact">
-          <div>Contact Us Page - TODO</div>
+          <Contact />
         </Route>
         <Route path="/">
           <HomePage />
