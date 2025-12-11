@@ -128,7 +128,7 @@ export default function Products(props: ProductsProps) {
       limit: 8,
       order: "createdAt",
       gender: ProductGender.FEMALE,
-      // productCollection: ProductCollection.TOPS,
+      productCollection: ProductCollection.TOPS,
       search: "",
     });
   };
