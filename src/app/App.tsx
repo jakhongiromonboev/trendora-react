@@ -10,15 +10,15 @@ import useBasket from "./hooks/useBasket";
 
 import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
+import Contact from "./screens/contactUsPage";
 // import OrdersPage from "./screens/ordersPage";
 // import UserPage from "./screens/userPage";
 // import HelpPage from "./screens/helpPage";
-// import AboutPage from "./screens/aboutPage";
 
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
-import Contact from "./screens/contactUsPage";
+import About from "./screens/aboutUsPage";
 
 function App() {
   const location = useLocation();
@@ -87,7 +87,7 @@ function App() {
           <div>Help Page - TODO</div>
         </Route>
         <Route path="/about">
-          <div>About Us Page - TODO</div>
+          <About />
         </Route>
         <Route path="/contact">
           <Contact />
