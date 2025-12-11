@@ -2,31 +2,39 @@ export const faq = [
   {
     question: "How do I place an order?",
     answer:
-      "Browse our collections, add items to your cart, and proceed to checkout to complete your order!",
+      "Browse our collection, add items to your bag, and checkout. You'll receive payment instructions via email.",
   },
   {
-    question: "How long does delivery take?",
+    question: "What payment methods do you accept?",
     answer:
-      "Standard delivery takes 3-5 business days. Express shipping options are available at checkout!",
+      "We accept bank transfers and Zelle. Payment details are sent after you place your order.",
   },
   {
-    question: "Is my personal information secure?",
+    question: "How long does shipping take?",
     answer:
-      "Absolutely! We use industry-standard encryption to protect all your personal and payment information.",
+      "Standard shipping takes 3-5 business days. Processing is 1-2 days after payment confirmation.",
+  },
+  {
+    question: "Do you offer free shipping?",
+    answer:
+      "Yes! Free shipping on orders over $110. Orders under $110 have a $6 flat fee.",
   },
   {
     question: "What is your return policy?",
     answer:
-      "We offer 30-day returns on unworn items with original tags. Contact Admin for more details!",
+      "Free returns within 14 days. Items must be unworn with tags attached.",
   },
   {
-    question: "How can I track my order?",
-    answer:
-      "Once shipped, you will receive a tracking number via email to monitor your delivery status.",
+    question: "How do I track my order?",
+    answer: "You'll receive an email with tracking info once your order ships.",
   },
   {
     question: "Do you ship internationally?",
+    answer: "Currently US only. International shipping coming soon!",
+  },
+  {
+    question: "How do I contact support?",
     answer:
-      "Yes! We ship to most countries worldwide. Shipping costs and times vary by location.",
+      "WhatsApp: +1 (212) 555-7891, Email: info@trendora.com, Mon-Sat 9AM-9PM EST.",
   },
 ];
