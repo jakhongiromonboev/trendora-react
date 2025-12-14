@@ -6,19 +6,17 @@ import Footer from "./components/footer";
 import { useGlobals } from "./hooks/useGlobals";
 import useBasket from "./hooks/useBasket";
 
-// TODO: Import pages when ready
-
 import HomePage from "./screens/homePage";
 import ProductsPage from "./screens/productsPage";
 import Contact from "./screens/contactUsPage";
+import About from "./screens/aboutUsPage";
+import Help from "./screens/helpPage";
 // import OrdersPage from "./screens/ordersPage";
 // import UserPage from "./screens/userPage";
-// import HelpPage from "./screens/helpPage";
 
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
-import About from "./screens/aboutUsPage";
 
 function App() {
   const location = useLocation();
@@ -84,7 +82,7 @@ function App() {
           <div>My Profile Page - TODO</div>
         </Route>
         <Route path="/help">
-          <div>Help Page - TODO</div>
+          <Help />
         </Route>
         <Route path="/about">
           <About />
