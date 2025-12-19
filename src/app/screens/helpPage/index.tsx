@@ -41,7 +41,6 @@ export default function Help() {
 
   const [value, setValue] = useState(getTabFromUrl());
 
-  /** SYNC TAB WITH URL **/
   useEffect(() => {
     setValue(getTabFromUrl());
   }, [location.search]);

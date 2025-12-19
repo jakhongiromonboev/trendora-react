@@ -73,9 +73,7 @@
   text-align: center;
 }
 
-/** ============================================
-    FAQ SECTION
-    ============================================ **/
+/**  FAQ SECTION **/
 .help .faq-list {
   display: flex;
   flex-direction: column;
@@ -121,9 +119,7 @@
   border-top: 1px solid #f0f0f0;
 }
 
-/** ============================================
-    TERMS & PRIVACY SECTIONS
-    ============================================ **/
+/**  TERMS & PRIVACY SECTIONS **/
 .help .terms-content,
 .help .privacy-content {
   display: flex;
@@ -158,9 +154,7 @@
   color: #555555;
 }
 
-/** ============================================
-    SHIPPING SECTION
-    ============================================ **/
+/** SHIPPING SECTION **/
 .help .shipping-section {
   display: flex;
   flex-direction: column;
