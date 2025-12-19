@@ -17,6 +17,9 @@ import Help from "./screens/helpPage";
 import "../css/app.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+import AuthenticationModal from "./components/auth";
+import MemberService from "../services/MemberService";
+import { sweetTopSmallSuccessAlert } from "../lib/sweetAlert";
 
 function App() {
   const location = useLocation();
@@ -35,7 +38,17 @@ function App() {
   };
   const handleCloseLogout = () => setAnchorEl(null);
 
-  const handleLogoutRequest = async () => {};
+  const handleLogoutRequest = async () => {
+    try {
+      const member = new MemberService();
+      member.logout();
+      await sweetTopSmallSuccessAlert("Success", 800);
+      setAuthMember(null);
+    } catch (err) {
+      console.log("Error, logout");
+      throw err;
+    }
+  };
 
   return (
     <>
@@ -96,6 +109,15 @@ function App() {
       </Switch>
 
       <Footer />
+
+      <AuthenticationModal
+        signupOpen={signupOpen}
+        loginOpen={loginOpen}
+        handleLoginClose={handleLoginClose}
+        handleSignupClose={handleSignupClose}
+        setLoginOpen={setLoginOpen}
+        setSignupOpen={setSignupOpen}
+      />
     </>
   );
 }
