@@ -1,10 +1,11 @@
+import type { Order } from "./order";
 import type { Product } from "./product";
 
 /** REACT APP STATE **/
 export interface AppRootState {
   homePage: HomePageState;
   productsPage: ProductsPageState;
-  //   ordersPage: OrdersPageState;
+  ordersPage: OrdersPageState;
 }
 
 /** HOMEPAGE **/
@@ -20,3 +21,8 @@ export interface ProductsPageState {
 }
 
 /** ORDERS PAGE **/
+export interface OrdersPageState {
+  pendingOrders: Order[];
+  proccessOrders: Order[];
+  deliveredOrders: Order[];
+}
