@@ -1,6 +1,11 @@
 import axios from "axios";
 import { serverApi } from "../lib/config";
-import type { Order, OrderInquiry, OrderItemInput } from "../lib/types/order";
+import type {
+  Order,
+  OrderInquiry,
+  OrderItemInput,
+  OrderUpdateInput,
+} from "../lib/types/order";
 import type { CartItem } from "../lib/types/search";
 
 class OrderService {
@@ -44,6 +49,19 @@ class OrderService {
       return result.data;
     } catch (err) {
       console.log("Error, getMyOrders", err);
+      throw err;
+    }
+  }
+
+  public async cancelOrderByUser(input: OrderUpdateInput): Promise<Order> {
+    try {
+      const url = `${this.path}/order/cancel`;
+      const result = await axios.post(url, input, { withCredentials: true });
+      console.log("cancelOrderByUser:", result);
+
+      return result.data;
+    } catch (err) {
+      console.log("Error, cancelOrderByUser:", err);
       throw err;
     }
   }

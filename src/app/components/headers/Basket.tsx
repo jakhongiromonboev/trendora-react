@@ -11,7 +11,7 @@ import type { CartItem } from "../../../lib/types/search";
 import { Messages, serverApi } from "../../../lib/config";
 import { sweetErrorHandling } from "../../../lib/sweetAlert";
 import { useGlobals } from "../../hooks/useGlobals";
-// import OrderService from "../../services/OrderService";
+import OrderService from "../../../services/OrderService";
 
 interface BasketProps {
   cartItems: CartItem[];
@@ -48,8 +48,14 @@ export default function Basket(props: BasketProps) {
       handleClose();
       if (!authMember) throw new Error(Messages.error2);
 
-      //   const order = new OrderService();
-      //   await order.createOrder(cartItems);
+      if (!authMember.memberAddress) {
+        await sweetErrorHandling(Messages.error6);
+        history.push("/member-page");
+        return;
+      }
+
+      const order = new OrderService();
+      await order.createOrder(cartItems);
 
       onDeleteAll();
 
