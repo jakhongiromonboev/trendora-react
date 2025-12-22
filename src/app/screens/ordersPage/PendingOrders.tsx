@@ -73,7 +73,7 @@ export default function PendingOrders() {
           <Box className="order-header">
             <Box className="order-info">
               <span className="order-id">
-                #{order?._id?.slice(-8)?.toUpperCase()}
+                #{order?._id?.slice(-6)?.toUpperCase()}
               </span>
               <span className="order-date">
                 {moment(order?.createdAt).format("MMM DD, YYYY")}
@@ -103,7 +103,7 @@ export default function PendingOrders() {
                   <Box className="item-info">
                     <span className="item-name">{product?.productName}</span>
                     <span className="item-meta">
-                      ${item?.itemPrice?.toFixed(2)} × {item?.itemQuantity}
+                      ${item?.itemPrice?.toFixed(2)} x {item?.itemQuantity}
                     </span>
                   </Box>
                   <span className="item-total">

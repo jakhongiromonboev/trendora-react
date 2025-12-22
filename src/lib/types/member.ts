@@ -40,6 +40,7 @@ export interface MemberUpdateInput {
   memberStatus?: MemberStatus;
   memberNick?: string;
   memberPhone?: string;
+  memberEmail?: string;
   memberPassword?: string;
   memberAddress?: string;
   memberDesc?: string;
