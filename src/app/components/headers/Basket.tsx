@@ -9,7 +9,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useHistory } from "react-router-dom";
 import type { CartItem } from "../../../lib/types/search";
 import { Messages, serverApi } from "../../../lib/config";
-import { sweetErrorHandling } from "../../../lib/sweetAlert";
+import {
+  sweetErrorHandling,
+  sweetFailureProvider,
+} from "../../../lib/sweetAlert";
 import { useGlobals } from "../../hooks/useGlobals";
 import OrderService from "../../../services/OrderService";
 
@@ -49,7 +52,7 @@ export default function Basket(props: BasketProps) {
       if (!authMember) throw new Error(Messages.error2);
 
       if (!authMember.memberAddress) {
-        await sweetErrorHandling(Messages.error6);
+        await sweetFailureProvider(Messages.error6);
         history.push("/member-page");
         return;
       }
@@ -104,7 +107,7 @@ export default function Basket(props: BasketProps) {
 
           {/* Products */}
           <Box className={"basket-drawer-content"}>
-            {cartItems.length === 0 ? (
+            {cartItems?.length === 0 ? (
               <Box className="empty-basket">
                 <ShoppingCartIcon
                   sx={{ fontSize: 64, color: "#cccccc", mb: 2 }}
@@ -113,7 +116,7 @@ export default function Basket(props: BasketProps) {
               </Box>
             ) : (
               <Box className={"orders-wrapper"}>
-                {cartItems.map((item: CartItem) => {
+                {cartItems?.map((item: CartItem) => {
                   const imagePath = `${serverApi}/${item.image}`;
                   return (
                     <Box className={"basket-info-box"} key={item._id}>

@@ -53,15 +53,15 @@ class OrderService {
     }
   }
 
-  public async cancelOrderByUser(input: OrderUpdateInput): Promise<Order> {
+  public async updateOrderByUser(input: OrderUpdateInput): Promise<Order> {
     try {
-      const url = `${this.path}/order/cancel`;
+      const url = `${this.path}/order/update`;
       const result = await axios.post(url, input, { withCredentials: true });
-      console.log("cancelOrderByUser:", result);
+      console.log("updateOrderByUser:", result);
 
       return result.data;
     } catch (err) {
-      console.log("Error, cancelOrderByUser:", err);
+      console.log("Error, updateOrderByUser:", err);
       throw err;
     }
   }

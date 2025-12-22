@@ -20,6 +20,7 @@ import "../css/footer.css";
 import AuthenticationModal from "./components/auth";
 import MemberService from "../services/MemberService";
 import { sweetTopSmallSuccessAlert } from "../lib/sweetAlert";
+import OrdersPage from "./screens/ordersPage";
 
 function App() {
   const location = useLocation();
@@ -43,6 +44,8 @@ function App() {
       const member = new MemberService();
       member.logout();
       await sweetTopSmallSuccessAlert("Success", 800);
+      // localStorage.removeItem("cartData");
+      // window.location.reload();
       setAuthMember(null);
     } catch (err) {
       console.log("Error, logout");
@@ -89,7 +92,7 @@ function App() {
           <ProductsPage onAdd={onAdd} />
         </Route>
         <Route path="/orders">
-          <div>Orders Page - TODO</div>
+          <OrdersPage />
         </Route>
         <Route path="/member-page">
           <div>My Profile Page - TODO</div>
