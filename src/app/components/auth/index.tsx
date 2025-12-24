@@ -224,6 +224,7 @@ export default function AuthenticationModal({
     } catch (err) {
       console.log("Signup error:", err);
       sweetErrorHandling(err);
+      handleSignupCloseWithReset();
     }
   };
 
@@ -252,6 +253,7 @@ export default function AuthenticationModal({
     } catch (err) {
       console.log("Login error:", err);
       sweetErrorHandling(err);
+      handleLoginCloseWithReset();
     }
   };
 

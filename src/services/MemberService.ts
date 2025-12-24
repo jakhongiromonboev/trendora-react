@@ -64,12 +64,17 @@ class MemberService {
   public async updateMember(input: MemberUpdateInput): Promise<Member> {
     try {
       const formData = new FormData();
-      formData.append("memberNick", input.memberNick || "");
-      formData.append("memberPhone", input.memberPhone || "");
-      formData.append("memberEmail", input.memberEmail || "");
-      formData.append("memberPassword", input.memberPassword || "");
-      formData.append("memberAddress", input.memberAddress || "");
-      formData.append("memberDesc", input.memberDesc || "");
+
+      if (input.memberNick) formData.append("memberNick", input.memberNick);
+      if (input.memberPhone) formData.append("memberPhone", input.memberPhone);
+      if (input.memberEmail) formData.append("memberEmail", input.memberEmail);
+      if (input.memberAddress)
+        formData.append("memberAddress", input.memberAddress);
+      if (input.memberDesc) formData.append("memberDesc", input.memberDesc);
+
+      if (input.memberPassword?.trim()) {
+        formData.append("memberPassword", input.memberPassword);
+      }
 
       if (input.memberImage) {
         formData.append("memberImage", input.memberImage);
