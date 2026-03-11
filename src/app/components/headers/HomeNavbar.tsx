@@ -180,7 +180,7 @@ export default function HomeNavbar(props: HomeNavbarProps) {
           playsInline
           poster="/img/video-poster.jpg"
         >
-          <source src="/video/hero-video.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dcqedfoc8/video/upload/v1773221415/hero-video3_kzotyw.mp4" />
           Your browser does not support the video tag.
         </video>
 

@@ -42,8 +42,8 @@ function App() {
       const member = new MemberService();
       member.logout();
       await sweetTopSmallSuccessAlert("Success", 800);
-      // localStorage.removeItem("cartData");
-      // window.location.reload();
+      localStorage.removeItem("cartData");
+      window.location.reload();
       setAuthMember(null);
     } catch (err) {
       console.log("Error, logout");
@@ -53,7 +53,6 @@ function App() {
 
   return (
     <>
-      {/* Conditional Navbar based on route */}
       {location.pathname === "/" ? (
         <HomeNavbar
           cartItems={cartItems}
