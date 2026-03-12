@@ -12,7 +12,7 @@ const newArrivalsRetriever = createSelector(
   retrieveNewArrivals,
   (newArrivals) => ({
     newArrivals,
-  })
+  }),
 );
 
 export default function NewArrivals() {
