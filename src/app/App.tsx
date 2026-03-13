@@ -41,10 +41,10 @@ function App() {
     try {
       const member = new MemberService();
       member.logout();
-      await sweetTopSmallSuccessAlert("Success", 800);
-      localStorage.removeItem("cartData");
-      window.location.reload();
       setAuthMember(null);
+      localStorage.removeItem("cartData");
+      await sweetTopSmallSuccessAlert("Success", 800);
+      window.location.href = "/";
     } catch (err) {
       console.log("Error, logout");
       throw err;
