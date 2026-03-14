@@ -44,7 +44,7 @@ function App() {
       setAuthMember(null);
       localStorage.removeItem("cartData");
       await sweetTopSmallSuccessAlert("Success", 800);
-      window.location.href = "/";
+      window.location.reload();
     } catch (err) {
       console.log("Error, logout");
       throw err;
