@@ -43,6 +43,7 @@ function App() {
       member.logout();
       setAuthMember(null);
       localStorage.removeItem("cartData");
+      localStorage.removeItem("memberData");
       await sweetTopSmallSuccessAlert("Success", 800);
       window.location.reload();
     } catch (err) {
